@@ -54,4 +54,4 @@ Content-Type:application/json
 }
 
 ###
-DELETE http://localhost:3000/todo/10/
+DELETE http://localhost:3000/todos/10/

@@ -156,13 +156,13 @@ app.put("/todos/:todoId/", async (request, response) => {
 });
 
 //API 5
-app.delete("/todo/:todoId", async (request, response) => {
+app.delete("/todos/:todoId", async (request, response) => {
   const { todoId } = request.params;
   console.log(todoId);
 
   const sqlQuery = `
     DELETE FROM todo 
-    WHERE todo = ${todoId};`;
+    WHERE id = ${todoId};`;
 
   await db.run(sqlQuery);
   response.send("Todo Deleted");
