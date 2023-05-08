@@ -154,3 +154,18 @@ app.put("/todos/:todoId/", async (request, response) => {
     response.send("Todo Updated");
   }
 });
+
+//API 5
+app.delete("/todo/:todoId", async (request, response) => {
+  const { todoId } = request.params;
+  console.log(todoId);
+
+  const sqlQuery = `
+    DELETE FROM todo 
+    WHERE todo = ${todoId};`;
+
+  await db.run(sqlQuery);
+  response.send("Todo Deleted");
+});
+
+module.exports = app;
